@@ -21,6 +21,8 @@ import {
   BookOpen,
   MessageCircle,
   Send,
+  ShieldCheck,
+  Clock,
 } from "lucide-react";
 
 const NAV_LINKS = [
@@ -50,26 +52,45 @@ const PROJECTS: Project[] = [
     id: 1,
     name: "IronLog",
     category: "Full Stack & PWA",
-    tagline: "Offline-First Fitness Tracker & Analytics",
+    tagline: "Offline-First Fitness Tracker Application",
     badge: "Featured PWA",
     description:
-      "A high-performance progressive web application that enables gym-goers to log workouts seamlessly with zero internet connection, synchronizing with the cloud as soon as connection is restored.",
+      "A high-performance progressive web application that lets users log gym workouts without internet connectivity, featuring automatic cloud synchronization as soon as connection is restored.",
     highlights: [
-      "Offline-first architecture utilizing IndexedDB for local data persistence",
-      "Automatic background cloud synchronization when device reconnects",
-      "Interactive Dashboard, Workout Planner, Body Measurements & Analytics modules",
-      "CSV data export engine for effortless cross-device backup & migration",
-      "Responsive, mobile-first UI crafted with reusable React components",
-      "Deployed on Vercel with continuous deployment via Git & GitHub",
+      "Built an offline-first fitness tracker that lets users log gym workouts without internet connectivity",
+      "Implemented automatic cloud synchronization when the device reconnects to the internet",
+      "Developed Dashboard, Workout Planner, Body Measurements, and Analytics modules to track workout progress",
+      "Added CSV export for data backup and migration across devices",
+      "Designed a responsive, mobile-friendly interface using reusable React components",
+      "Deployed the application on Vercel and managed source code with Git and GitHub",
     ],
-    tech: ["React", "TypeScript", "PWA", "IndexedDB", "Tailwind CSS", "Vercel", "Git"],
+    tech: ["React", "TypeScript", "PWA", "IndexedDB", "Git", "GitHub", "Vercel"],
     image:
       "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=900&auto=format&fit=crop&q=80",
-    github: "https://github.com/kiranjdv/ironlog",
+    github: "https://github.com/kiranjdv/IronLog",
     live: "https://vercel.com",
   },
   {
     id: 2,
+    name: "Heart Disease Prediction System",
+    category: "Machine Learning & Python",
+    tagline: "Clinical ML Pipeline & Diagnostic Web Application",
+    badge: "Machine Learning",
+    description:
+      "A clinical machine learning system predicting the presence of heart disease from 13 clinical features using the UCI dataset, complete with a Flask web app and automated PDF diagnostic reports.",
+    highlights: [
+      "Built a model to predict heart disease from 13 clinical features (UCI dataset, 303 patients)",
+      "Compared six algorithms using ROC-AUC, recall, and 5-fold cross-validation; selected KNN (ROC-AUC 0.89, recall 0.91)",
+      "Developed a Flask web app that returns predictions and generates a PDF diagnostic report",
+    ],
+    tech: ["Python", "scikit-learn", "pandas", "Flask"],
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&auto=format&fit=crop&q=80",
+    github: "https://github.com/kiranjdv/HDPS",
+    live: "#",
+  },
+  {
+    id: 3,
     name: "Student Management System",
     category: "Full Stack & Web Application",
     tagline: "CRUD Academic Records Portal",
@@ -77,36 +98,14 @@ const PROJECTS: Project[] = [
     description:
       "A full-stack CRUD web application engineered to manage student records efficiently, with robust search queries, data validation, and persistent PostgreSQL storage.",
     highlights: [
-      "Full CRUD lifecycle: Add, view, edit, search, and delete student records",
-      "Connected with PostgreSQL database for secure and persistent data storage",
-      "Server-side rendering and dynamic templating using Flask & Jinja2",
-      "Clean, responsive user interface styled with modern CSS and HTML5",
+      "Built a CRUD-based web application to manage student records",
+      "Implemented add, update, delete, and search functionality",
+      "Connected the application to PostgreSQL for persistent data storage",
     ],
-    tech: ["Python", "Flask", "PostgreSQL", "HTML5", "CSS3", "Jinja2"],
+    tech: ["Python", "Flask", "PostgreSQL", "HTML", "CSS", "Jinja2"],
     image:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=80",
-    github: "https://github.com/kiranjdv/studentmngtsystem",
-    live: "#",
-  },
-  {
-    id: 3,
-    name: "Heart Disease Prediction System",
-    category: "Machine Learning & Python",
-    tagline: "ML Pipeline & Clinical Diagnostic Web Dashboard",
-    badge: "Machine Learning",
-    description:
-      "A clinical machine learning system predicting the presence of heart disease from 13 diagnostic features using the UCI dataset, complete with a Flask dashboard and automated PDF diagnostic report generation.",
-    highlights: [
-      "Built an end-to-end ML pipeline on UCI Heart Disease dataset (303 patients, 13 clinical features)",
-      "Trained & compared 6 models: KNN, SVM, Random Forest, Gradient Boosting, Logistic Regression, Decision Tree",
-      "Evaluated models using accuracy, precision, recall, F1-score, ROC-AUC, and 5-fold cross-validation",
-      "Selected KNN as the best model (ROC-AUC 0.89, recall 0.91), prioritizing recall to minimize costly false negatives",
-      "Developed a Flask web dashboard for real-time patient parameter input with downloadable PDF diagnostic reports",
-    ],
-    tech: ["Python", "scikit-learn", "pandas", "Flask", "NumPy"],
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&auto=format&fit=crop&q=80",
-    github: "https://github.com/kiranjdv/heart-disease-prediction",
+    github: "https://github.com/kiranjdv/StudentMngtSys",
     live: "#",
   },
 ];
@@ -115,47 +114,97 @@ const SKILL_CATEGORIES = [
   {
     name: "Languages",
     icon: Code2,
-    skills: ["JavaScript (ES6+)", "TypeScript", "Python", "SQL", "HTML5", "CSS3"],
+    skills: ["JavaScript", "TypeScript", "Python", "SQL", "HTML", "CSS"],
   },
   {
-    name: "Tools & Frameworks",
+    name: "Frameworks & Libraries",
     icon: Layers,
-    skills: [
-      "React",
-      "Tailwind CSS",
-      "Flask",
-      "scikit-learn",
-      "pandas",
-      "Git & GitHub",
-      "VS Code",
-      "REST APIs",
-    ],
+    skills: ["React", "Tailwind CSS", "Flask", "scikit-learn", "pandas"],
   },
   {
-    name: "Databases & Storage",
+    name: "Databases",
     icon: Database,
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "IndexedDB"],
+    skills: ["MySQL", "PostgreSQL", "MongoDB", "IndexedDB"],
   },
   {
-    name: "Engineering & Practices",
+    name: "Tools & Platforms",
+    icon: Sparkles,
+    skills: ["Git", "GitHub", "VS Code", "Vercel", "REST APIs"],
+  },
+  {
+    name: "Core Concepts",
     icon: Cpu,
     skills: [
-      "Machine Learning Pipelines",
       "Responsive Web Design",
-      "Model Evaluation & Tuning",
+      "Machine Learning",
+      "Progressive Web Apps (PWA)",
       "CRUD Operations",
+      "Object-Oriented Programming (OOP)",
       "Version Control",
-      "OOP & Problem Solving",
-      "Offline-First Architecture",
+      "Debugging & Problem Solving",
     ],
   },
 ];
 
+interface Certification {
+  id: string;
+  name: string;
+  badgeTitle: string;
+  issuer: string;
+  issueDate: string;
+  hours?: string;
+  description: string;
+  skillsCovered: string[];
+  credlyUrl?: string;
+  verified: boolean;
+}
+
+const CERTIFICATIONS: Certification[] = [
+  {
+    id: "aws-ml",
+    name: "AWS Academy Graduate - Machine Learning Foundations",
+    badgeTitle: "Machine Learning Foundations",
+    issuer: "AWS Academy",
+    issueDate: "Oct 2026",
+    hours: "20 hours completed",
+    description:
+      "Completed a hands-on training program covering machine learning fundamentals, data preparation, model training, and evaluation techniques.",
+    skillsCovered: [
+      "Machine Learning Fundamentals",
+      "Data Preparation",
+      "Model Training",
+      "Evaluation Techniques",
+      "AWS AI/ML Services",
+    ],
+    credlyUrl: "https://www.credly.com/go/pX8AVAqF",
+    verified: true,
+  },
+  {
+    id: "aws-cloud",
+    name: "AWS Academy Graduate - Cloud Foundations",
+    badgeTitle: "Cloud Foundations",
+    issuer: "AWS Academy",
+    issueDate: "Oct 2025",
+    hours: "20 hours completed",
+    description:
+      "Completed a hands-on program covering troubleshooting, networking, system administration, and security fundamentals.",
+    skillsCovered: [
+      "Cloud Architecture",
+      "System Administration",
+      "Networking",
+      "Cloud Security",
+      "Troubleshooting",
+    ],
+    credlyUrl: "https://www.credly.com/go/liL5WR3L",
+    verified: true,
+  },
+];
+
 const STATS = [
-  { label: "CGPI (Engineering)", value: "7.60" },
+  { label: "CGPI (BE IT)", value: "7.60" },
   { label: "Expected Graduation", value: "2027" },
-  { label: "Key Projects", value: "3+" },
-  { label: "AWS Certified", value: "Foundations" },
+  { label: "Key Projects", value: "3" },
+  { label: "AWS Certifications", value: "2 Badges" },
 ];
 
 export default function App() {
@@ -325,11 +374,9 @@ export default function App() {
               Information Technology Engineering Student · Front-End & Full-Stack Developer
             </p>
             <p className="text-base text-muted-foreground leading-relaxed">
-              Motivated and detail-oriented Information Technology Engineering student at Mumbai University
-              with a strong foundation in front-end and web engineering. Passionate about building
-              responsive, offline-first, and user-centric web applications using{" "}
-              <span className="text-foreground font-semibold">React, TypeScript, Python</span>, and
-              modern web technologies.
+              Information Technology engineering student with a strong foundation in front-end web development. Experienced in building responsive, user-friendly web applications using{" "}
+              <span className="text-foreground font-semibold">React, TypeScript, JavaScript, Tailwind CSS</span>, and REST APIs, with back-end and machine learning experience in{" "}
+              <span className="text-foreground font-semibold">Python, Flask, scikit-learn</span>, and SQL databases.
             </p>
           </div>
 
@@ -568,7 +615,7 @@ export default function App() {
           and continuous learning.
         </p>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {SKILL_CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             return (
@@ -609,32 +656,35 @@ export default function App() {
       {/* ── EDUCATION & CERTIFICATIONS ── */}
       <section id="education" className="py-24 px-6 max-w-6xl mx-auto border-t border-border">
         <SectionLabel number="03" title="Education & Credentials" />
+        <p className="text-muted-foreground -mt-6 mb-12 max-w-2xl text-sm">
+          Formal undergraduate engineering program alongside verified cloud and machine learning certifications.
+        </p>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Education Card */}
+        {/* Formal Education Card */}
+        <div className="mb-8">
           <div
-            className="bg-card border border-border p-7 flex flex-col justify-between hover:border-primary/40 transition-colors"
+            className="bg-card border border-border p-7 sm:p-8 hover:border-primary/40 transition-colors"
             style={{ borderRadius: "var(--radius)" }}
           >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-primary/10 text-primary rounded">
-                    <GraduationCap size={22} />
-                  </div>
-                  <div>
-                    <span
-                      className="text-xs text-muted-foreground uppercase tracking-wider"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                    >
-                      Formal Degree
-                    </span>
-                    <h3 className="text-xl font-bold">Mumbai University</h3>
-                  </div>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
+              <div className="flex items-center gap-3.5">
+                <div className="p-3 bg-primary/10 text-primary rounded-lg shrink-0">
+                  <GraduationCap size={26} />
                 </div>
+                <div>
+                  <span
+                    className="text-xs text-muted-foreground uppercase tracking-wider block"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    Bachelor of Engineering (B.E.)
+                  </span>
+                  <h3 className="text-2xl font-bold">Mumbai University</h3>
+                </div>
+              </div>
 
+              <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
                 <span
-                  className="text-xs font-semibold px-2.5 py-1 bg-secondary text-primary border border-primary/20"
+                  className="text-xs font-semibold px-3 py-1 bg-secondary text-primary border border-primary/25"
                   style={{
                     fontFamily: "'JetBrains Mono', monospace",
                     borderRadius: "var(--radius)",
@@ -642,24 +692,32 @@ export default function App() {
                 >
                   CGPI: 7.60
                 </span>
-              </div>
-
-              <div className="space-y-2 mb-4">
-                <p className="text-base font-semibold text-foreground/90">
-                  Bachelor of Engineering in Information Technology
-                </p>
-                <p
-                  className="text-xs text-muted-foreground"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                <span
+                  className="text-xs font-semibold px-3 py-1 bg-secondary/80 text-muted-foreground border border-border"
+                  style={{
+                    fontFamily: "'JetBrains Mono', monospace",
+                    borderRadius: "var(--radius)",
+                  }}
                 >
-                  Mumbai, Maharashtra · Aug 2023 – May 2027
-                </p>
+                  Aug 2023 – May 2027
+                </span>
               </div>
+            </div>
 
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Pursuing comprehensive undergraduate training in Information Technology at Mumbai
-                University. Focusing on data structures, algorithms, database management systems,
-                modern web architectures, and software engineering principles.
+            <div className="space-y-3">
+              <p className="text-lg font-semibold text-foreground/90">
+                Bachelor of Engineering in Information Technology
+              </p>
+              <p
+                className="text-xs text-muted-foreground"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                Mumbai, Maharashtra, India
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed max-w-4xl">
+                Pursuing Information Technology engineering at Mumbai University. Building strong competency in
+                data structures, algorithms, object-oriented programming, relational databases, web architecture,
+                and machine learning fundamentals.
               </p>
             </div>
 
@@ -668,73 +726,142 @@ export default function App() {
                 className="text-xs text-muted-foreground"
                 style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                Status: In Progress (Expected 2027)
+                Status: In Progress · Expected May 2027
               </span>
-              <span className="w-2 h-2 rounded-full bg-primary" />
+              <div className="flex items-center gap-2 text-xs text-primary font-medium">
+                <span className="w-2 h-2 rounded-full bg-primary" />
+                <span>Currently Enrolled</span>
+              </div>
             </div>
           </div>
+        </div>
 
-          {/* Certification Card */}
-          <div
-            className="bg-card border border-border p-7 flex flex-col justify-between hover:border-primary/40 transition-colors"
-            style={{ borderRadius: "var(--radius)" }}
-          >
-            <div>
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="p-2.5 bg-primary/10 text-primary rounded">
-                    <Award size={22} />
+        {/* Certifications Sub-heading & Grid */}
+        <div className="mt-10">
+          <div className="flex items-center justify-between mb-6">
+            <h3
+              className="text-xs text-primary font-bold tracking-[0.14em] uppercase"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              AWS Academy Certifications & Badges
+            </h3>
+            <span
+              className="text-xs text-muted-foreground"
+              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+            >
+              2 Verified Credentials
+            </span>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {CERTIFICATIONS.map((cert) => (
+              <div
+                key={cert.id}
+                className="bg-card border border-border p-7 flex flex-col justify-between hover:border-primary/40 transition-colors"
+                style={{ borderRadius: "var(--radius)" }}
+              >
+                <div>
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 bg-primary/10 text-primary rounded">
+                        <Award size={22} />
+                      </div>
+                      <div>
+                        <span
+                          className="text-xs text-muted-foreground uppercase tracking-wider block"
+                          style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                        >
+                          {cert.issuer}
+                        </span>
+                        <h4 className="text-lg font-bold leading-snug mt-0.5">
+                          {cert.name}
+                        </h4>
+                      </div>
+                    </div>
                   </div>
-                  <div>
+
+                  <div className="flex flex-wrap items-center gap-2 mb-4">
                     <span
-                      className="text-xs text-muted-foreground uppercase tracking-wider"
-                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      className="text-xs font-semibold px-2.5 py-1 bg-secondary text-primary border border-primary/20"
+                      style={{
+                        fontFamily: "'JetBrains Mono', monospace",
+                        borderRadius: "var(--radius)",
+                      }}
                     >
-                      Cloud Credential
+                      {cert.issueDate}
                     </span>
-                    <h3 className="text-xl font-bold">AWS Academy</h3>
+                    {cert.hours && (
+                      <span
+                        className="inline-flex items-center gap-1 text-xs px-2.5 py-1 bg-secondary text-muted-foreground border border-border"
+                        style={{
+                          fontFamily: "'JetBrains Mono', monospace",
+                          borderRadius: "var(--radius)",
+                        }}
+                      >
+                        <Clock size={12} className="text-primary" />
+                        {cert.hours}
+                      </span>
+                    )}
+                    <span
+                      className="inline-flex items-center gap-1 text-xs px-2.5 py-1 bg-primary/10 text-primary border border-primary/20"
+                      style={{
+                        fontFamily: "'JetBrains Mono', monospace",
+                        borderRadius: "var(--radius)",
+                      }}
+                    >
+                      <Sparkles size={12} />
+                      {cert.badgeTitle}
+                    </span>
+                  </div>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-5">
+                    {cert.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-1.5 mb-6">
+                    {cert.skillsCovered.map((s) => (
+                      <span
+                        key={s}
+                        className="text-[11px] text-muted-foreground bg-secondary/80 border border-border px-2 py-0.5"
+                        style={{
+                          fontFamily: "'JetBrains Mono', monospace",
+                          borderRadius: "var(--radius)",
+                        }}
+                      >
+                        {s}
+                      </span>
+                    ))}
                   </div>
                 </div>
 
-                <span
-                  className="text-xs font-semibold px-2.5 py-1 bg-secondary text-primary border border-primary/20"
-                  style={{
-                    fontFamily: "'JetBrains Mono', monospace",
-                    borderRadius: "var(--radius)",
-                  }}
-                >
-                  Oct 2025
-                </span>
+                <div className="pt-4 border-t border-border/70 flex items-center justify-between">
+                  <div className="flex items-center gap-1.5 text-xs text-primary font-medium">
+                    <ShieldCheck size={15} />
+                    <span>Verified Credential</span>
+                  </div>
+
+                  {cert.credlyUrl ? (
+                    <a
+                      href={cert.credlyUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-primary hover:text-primary-foreground bg-primary/10 hover:bg-primary border border-primary/30 px-3 py-1.5 rounded transition-all"
+                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      <span>Verify on Credly</span>
+                      <ExternalLink size={13} />
+                    </a>
+                  ) : (
+                    <span
+                      className="text-xs text-muted-foreground"
+                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      AWS Academy Completed
+                    </span>
+                  )}
+                </div>
               </div>
-
-              <div className="space-y-2 mb-4">
-                <p className="text-base font-semibold text-foreground/90">
-                  AWS Academy Cloud Foundations
-                </p>
-                <p
-                  className="text-xs text-muted-foreground"
-                  style={{ fontFamily: "'JetBrains Mono', monospace" }}
-                >
-                  Amazon Web Services Training & Certification
-                </p>
-              </div>
-
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Completed a rigorous, hands-on program covering cloud computing fundamentals,
-                system administration, networking, security best practices, and systematic
-                infrastructure troubleshooting in AWS environments.
-              </p>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-border/70 flex items-center justify-between">
-              <span
-                className="text-xs text-primary font-medium"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
-                Verified Certification
-              </span>
-              <Sparkles size={16} className="text-primary" />
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -796,6 +923,10 @@ export default function App() {
                 <li className="flex items-center justify-between py-1 border-b border-border/50">
                   <span className="text-muted-foreground">Academic Score</span>
                   <span className="font-medium text-primary">CGPI 7.60 / 10.0</span>
+                </li>
+                <li className="flex items-center justify-between py-1 border-b border-border/50">
+                  <span className="text-muted-foreground">Certifications</span>
+                  <span className="font-medium text-foreground">2x AWS Academy (Cloud & ML)</span>
                 </li>
                 <li className="flex items-center justify-between py-1 border-b border-border/50">
                   <span className="text-muted-foreground">Email</span>
