@@ -338,65 +338,120 @@ export default function App() {
           aria-hidden="true"
         />
 
-        <div className="mb-6 flex flex-wrap items-center gap-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-secondary/80 border border-border rounded-full">
-            <span
-              className="w-2 h-2 rounded-full bg-primary"
-              style={{ animation: "pulse 2s infinite" }}
-            />
-            <span
-              className="text-xs text-muted-foreground tracking-[0.14em] uppercase"
-              style={{ fontFamily: "'JetBrains Mono', monospace" }}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          {/* Left Column: Headline and Bio */}
+          <div className="lg:col-span-7">
+            <div className="flex flex-wrap items-center gap-3 mb-6">
+              <div
+                className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+                <span>Available for Internships & Roles</span>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
+                <MapPin size={13} className="text-primary" />
+                <span>Mumbai, India</span>
+              </div>
+            </div>
+
+            <h1
+              className="font-black leading-[0.88] tracking-tight mb-7 uppercase"
+              style={{ fontSize: "clamp(3.4rem, 8vw, 7.5rem)" }}
             >
-              Available for Internships & Roles
-            </span>
+              Kiran
+              <br />
+              Jadhav
+              <span className="text-primary">.</span>
+            </h1>
+
+            <div className="space-y-3 mb-8 max-w-xl">
+              <p className="text-lg md:text-xl font-medium text-foreground/90">
+                Information Technology Engineering Student · Front-End & Full-Stack Developer
+              </p>
+              <p className="text-base text-muted-foreground leading-relaxed">
+                Information Technology engineering student with a strong foundation in front-end web development. Experienced in building responsive, user-friendly web applications using{" "}
+                <span className="text-foreground font-semibold">React, TypeScript, JavaScript, Tailwind CSS</span>, and REST APIs, with back-end and machine learning experience in{" "}
+                <span className="text-foreground font-semibold">Python, Flask, scikit-learn</span>, and SQL databases.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+              <button
+                onClick={() => scrollTo("#projects")}
+                className="inline-flex items-center justify-center gap-2 text-sm border border-border px-5 py-3 hover:border-primary/50 hover:text-primary transition-colors cursor-pointer"
+                style={{ borderRadius: "var(--radius)" }}
+              >
+                View Projects
+                <ArrowUpRight size={15} />
+              </button>
+
+              <button
+                onClick={() => scrollTo("#contact")}
+                className="inline-flex items-center justify-center gap-2 text-sm bg-primary text-primary-foreground px-5 py-3 font-semibold hover:bg-primary/90 transition-all cursor-pointer shadow-md"
+                style={{ borderRadius: "var(--radius)" }}
+              >
+                Get in Touch
+              </button>
+            </div>
           </div>
 
-          <div className="inline-flex items-center gap-1.5 text-xs text-muted-foreground">
-            <MapPin size={13} className="text-primary" />
-            <span>Mumbai, India</span>
-          </div>
-        </div>
+          {/* Right Column: Profile Photo Card */}
+          <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-xs sm:max-w-sm lg:max-w-md group">
+              {/* Neon Green Ambient Backglow */}
+              <div
+                className="absolute -inset-1.5 bg-gradient-to-tr from-primary/35 via-primary/10 to-transparent rounded-3xl blur-2xl opacity-75 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                aria-hidden="true"
+              />
 
-        <h1
-          className="font-black leading-[0.88] tracking-tight mb-8 uppercase"
-          style={{ fontSize: "clamp(3.8rem, 11vw, 10.5rem)" }}
-        >
-          Kiran
-          <br />
-          Jadhav
-          <span className="text-primary">.</span>
-        </h1>
+              {/* Profile Card Container */}
+              <div
+                className="relative rounded-2xl p-2.5 sm:p-3 bg-card/90 backdrop-blur-md border border-border group-hover:border-primary/40 transition-all duration-500 shadow-2xl"
+                style={{ borderRadius: "calc(var(--radius) * 1.5)" }}
+              >
+                <div className="relative rounded-xl overflow-hidden aspect-[4/5] bg-secondary/60">
+                  <img
+                    src="/kiran-profile.jpg"
+                    alt="Kiran Dipak Jadhav - Developer Portrait"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700 ease-out"
+                    loading="eager"
+                  />
 
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
-          <div className="max-w-xl space-y-3">
-            <p className="text-lg md:text-xl font-medium text-foreground/90">
-              Information Technology Engineering Student · Front-End & Full-Stack Developer
-            </p>
-            <p className="text-base text-muted-foreground leading-relaxed">
-              Information Technology engineering student with a strong foundation in front-end web development. Experienced in building responsive, user-friendly web applications using{" "}
-              <span className="text-foreground font-semibold">React, TypeScript, JavaScript, Tailwind CSS</span>, and REST APIs, with back-end and machine learning experience in{" "}
-              <span className="text-foreground font-semibold">Python, Flask, scikit-learn</span>, and SQL databases.
-            </p>
-          </div>
+                  {/* Gradient shadow overlay at bottom */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/10 to-transparent opacity-70 pointer-events-none" />
 
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 shrink-0">
-            <button
-              onClick={() => scrollTo("#projects")}
-              className="inline-flex items-center justify-center gap-2 text-sm border border-border px-5 py-3 hover:border-primary/50 hover:text-primary transition-colors cursor-pointer"
-              style={{ borderRadius: "var(--radius)" }}
-            >
-              View Projects
-              <ArrowUpRight size={15} />
-            </button>
+                  {/* Top-Right Badge: Full-Stack & ML */}
+                  <div
+                    className="absolute top-3.5 right-3.5 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-background/90 backdrop-blur-md border border-primary/30 shadow-md text-primary"
+                    style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                  >
+                    <Sparkles size={12} />
+                    <span className="text-[11px] font-semibold">Full-Stack & ML</span>
+                  </div>
 
-            <button
-              onClick={() => scrollTo("#contact")}
-              className="inline-flex items-center justify-center gap-2 text-sm bg-primary text-primary-foreground px-5 py-3 font-semibold hover:bg-primary/90 transition-all cursor-pointer shadow-md"
-              style={{ borderRadius: "var(--radius)" }}
-            >
-              Get in Touch
-            </button>
+                  {/* Bottom Info Pill */}
+                  <div className="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 p-2.5 rounded-lg bg-background/90 backdrop-blur-md border border-border/80 shadow-lg">
+                    <div className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                      <span
+                        className="text-xs font-semibold text-foreground tracking-wide"
+                        style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                      >
+                        Kiran Jadhav
+                      </span>
+                    </div>
+                    <span
+                      className="text-[11px] text-muted-foreground uppercase"
+                      style={{ fontFamily: "'JetBrains Mono', monospace" }}
+                    >
+                      BE · IT Engg
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
